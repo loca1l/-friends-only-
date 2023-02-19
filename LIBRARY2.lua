@@ -26,23 +26,24 @@ library.theme = {
     tilesize = 100,
     cursor = false,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
-    backgroundcolor = Color3.fromRGB(60, 60, 60),
+    backgroundcolor = Color3.fromRGB(21, 21, 21),
     tabstextcolor = Color3.fromRGB(240, 240, 240),
-    bordercolor = Color3.fromRGB(60, 60, 60),
-    accentcolor = Color3.fromRGB(28, 56, 139),
+    bordercolor = Color3.fromRGB(30, 30, 30),
+    accentcolor = Color3.fromRGB(20, 50, 139),
     accentcolor2 = Color3.fromRGB(16, 31, 78),
-    outlinecolor = Color3.fromRGB(60, 60, 60),
-    outlinecolor2 = Color3.fromRGB(60, 60, 60),
-    sectorcolor = Color3.fromRGB(60, 60, 60),
-    toptextcolor = Color3.fromRGB(255, 255, 255),
+    outlinecolor = Color3.fromRGB(30, 30, 30),
+    outlinecolor2 = Color3.fromRGB(20, 20, 20),
+    sectorcolor = Color3.fromRGB(30, 30, 30),
+    toptextcolor = Color3.fromRGB(240, 240, 240),
     topheight = 51,
-    topcolor = Color3.fromRGB(60, 60, 60),
-    topcolor2 = Color3.fromRGB(60, 60, 60),
-    buttoncolor = Color3.fromRGB(49, 49, 49),
-    buttoncolor2 = Color3.fromRGB(49, 49, 49),
-    itemscolor = Color3.fromRGB(200, 200, 200),
-    itemscolor2 = Color3.fromRGB(210, 210, 210)
+    topcolor = Color3.fromRGB(30, 30, 30),
+    topcolor2 = Color3.fromRGB(30, 30, 30),
+    buttoncolor = Color3.fromRGB(39, 39, 39),
+    buttoncolor2 = Color3.fromRGB(40,40, 40),
+    itemscolor = Color3.fromRGB(190, 190, 190),
+    itemscolor2 = Color3.fromRGB(190, 190, 190)
 }
+
 
 if library.theme.cursor and Drawing then
     local success = pcall(function() 

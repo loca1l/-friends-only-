@@ -72,7 +72,7 @@ library.themes = {
         {
         name = 'Main',
         theme = {
-            ['Accent']                    = fromrgb(102, 153, 255);
+            ['Accent']                    = fromrgb(124, 14, 227);
             ['Background']                = fromrgb(18,18,18);
             ['Border']                    = fromrgb(0,0,0);
             ['Border 1']                  = fromrgb(60,60,60);
@@ -4744,20 +4744,20 @@ function library:CreateSettingsTab(menu)
         end
     end
 
-    configSection:AddButton({text = 'Load', confirm = true, callback = function()
+    configSection:AddButton({text = 'Load', confirm = false, callback = function()
         library:LoadConfig(library.flags.selectedconfig);
     end}):AddButton({text = 'Save', confirm = true, callback = function()
         library:SaveConfig(library.flags.selectedconfig);
     end})
 
-    configSection:AddButton({text = 'Create', confirm = true, callback = function()
+    configSection:AddButton({text = 'Create', confirm = false, callback = function()
         if library:GetConfig(library.flags.configinput) then
             library:SendNotification('Config \''..library.flags.configinput..'\' already exists.', 5, c3new(1,0,0));
             return
         end
         writefile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.configinput.. self.fileext, http:JSONEncode({}));
         refreshConfigs()
-    end}):AddButton({text = 'Delete', confirm = true, risky = true, callback = function()
+    end}):AddButton({text = 'Delete', confirm = false, risky = true, callback = function()
         if library:GetConfig(library.flags.selectedconfig) then
             delfile(self.cheatname..'/'..self.gamename..'/configs/'..library.flags.selectedconfig.. self.fileext);
             refreshConfigs()
@@ -4770,7 +4770,7 @@ function library:CreateSettingsTab(menu)
         library:SetOpen(not library.open)
     end});
 
-    mainSection:AddButton({text = 'Unload', confirm = true, risky = true,  callback = function()
+    mainSection:AddButton({text = 'Close Ui', confirm = false, risky = true,  callback = function()
         library:Unload();
     end})
 
@@ -4786,7 +4786,7 @@ function library:CreateSettingsTab(menu)
     end});
 
     mainSection:AddSeparator({text = 'Watermark'})
-    mainSection:AddToggle({text = 'Enabled',  state = true, flag = 'watermark_enabled'});
+    mainSection:AddToggle({text = 'Enabled',  state = false, flag = 'watermark_enabled'});
     mainSection:AddList({text = 'Position', flag = 'watermark_pos', selected = 'Top Left', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
         library.watermark.lock = val;
     end})
